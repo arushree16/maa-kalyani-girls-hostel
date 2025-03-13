@@ -1,0 +1,6 @@
+# No external Python packages required
+# The website uses vanilla HTML, CSS, and JavaScript
+# Local development server can be run using Python's built-in http.server module
+
+# Optional: For development
+# live-server==1.2.2  # If you want auto-reload functionality
