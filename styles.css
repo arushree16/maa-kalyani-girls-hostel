@@ -835,45 +835,59 @@ h2 {
 /* Contact Section */
 .contact-section {
     padding: 5rem 5%;
-    background: #f8f9fa;
+    background: #f7f7f7;
 }
 
-.contact-content {
-    max-width: 800px;
+.contact-container {
+    max-width: 1200px;
     margin: 0 auto;
-    background: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.contact-info {
     padding: 2rem;
+    background: white;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.contact-info h3 {
+    color: #484848;
+    margin-bottom: 1.5rem;
 }
 
 .contact-info ul {
     list-style: none;
-    margin-top: 1rem;
+    padding: 0;
 }
 
 .contact-info li {
-    margin-bottom: 0.5rem;
-    color: #666;
+    margin-bottom: 1rem;
 }
 
-.contact-info ul li a {
+.contact-info a {
     color: #ff385c;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.contact-info ul li a:hover {
-    color: #d42e4e;
-    text-decoration: underline;
+.contact-info a:hover {
+    color: #d63051;
 }
 
 /* Footer */
 footer {
     background: #484848;
     color: white;
+    padding: 2rem 1rem;
     text-align: center;
-    padding: 2rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
 }
 
 /* Responsive Design */
@@ -892,5 +906,292 @@ footer {
     
     .rooms-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Base styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #484848;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ff385c;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #484848;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff385c;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #484848;
+    cursor: pointer;
+}
+
+/* Sections */
+section {
+    padding: 4rem 1rem;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #484848;
+    margin-bottom: 2rem;
+}
+
+/* Rooms Grid */
+.rooms-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+/* Contact Section */
+.contact-section {
+    background: #f7f7f7;
+    padding: 4rem 1rem;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.contact-info {
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.contact-info h3 {
+    color: #484848;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 1rem;
+}
+
+.contact-info a {
+    color: #ff385c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #d63051;
+}
+
+/* Footer */
+footer {
+    background: #484848;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    /* Navigation */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Sections */
+    section {
+        padding: 3rem 1rem;
+    }
+
+    section h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Rooms Grid */
+    .rooms-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    /* Contact Section */
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .contact-info {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Navigation */
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .nav-container {
+        padding: 0 0.75rem;
+    }
+
+    /* Sections */
+    section {
+        padding: 2.5rem 0.75rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    /* Contact Info */
+    .contact-info {
+        padding: 1.25rem;
+    }
+
+    .contact-info h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .contact-info li {
+        font-size: 0.95rem;
+        margin-bottom: 0.75rem;
+    }
+}
+
+/* Add mobile menu functionality */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #484848;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
+    color: #ff385c;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.5rem;
     }
 }

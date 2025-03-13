@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize lightbox
     console.log('Setting up lightbox...');
     initializeLightbox();
+
+    // Initialize mobile menu
+    console.log('Initializing mobile menu...');
+    initializeMobileMenu();
 });
 
 // Room slider functions
@@ -354,4 +358,35 @@ function initializeLightbox() {
     });
 
     console.log('Lightbox initialized');
+}
+
+// Mobile Menu Toggle
+function initializeMobileMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (menuToggle && navLinks) {
+        menuToggle.innerHTML = '☰'; // Hamburger icon
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '☰';
+            }
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '☰';
+            });
+        });
+    }
 }
