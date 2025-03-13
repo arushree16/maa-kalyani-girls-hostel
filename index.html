@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <title>Maa Kalyani Girls Hostel - Your Home Away From Home</title>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-brand">Maa Kalyani</div>
+            <a href="#" class="nav-brand">Maa Kalyani</a>
             <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
             <ul class="nav-links">
                 <li><a href="#rooms">Rooms</a></li>
@@ -153,7 +154,7 @@
                 </div>
                 <div class="amenity-card">
                     <h3>Water Supply</h3>
-                    <p>Regular water supply available</p>
+                    <p>Regular water supply with RO purified drinking water</p>
                 </div>
                 <div class="amenity-card">
                     <h3>Security</h3>
@@ -162,6 +163,22 @@
                 <div class="amenity-card">
                     <h3>Near to multiple colleges</h3>
                     <p>Less than 2 km from Vasanta College</p>
+                </div>
+                <div class="amenity-card">
+                    <h3>Healthcare Access</h3>
+                    <p>Qualified doctors available nearby for medical assistance</p>
+                </div>
+                <div class="amenity-card">
+                    <h3>Market Hub</h3>
+                    <p>Walking distance to local markets and shopping areas</p>
+                </div>
+                <div class="amenity-card">
+                    <h3>Kitchen Facilities</h3>
+                    <p>Gas connection and refrigerator available for residents</p>
+                </div>
+                <div class="amenity-card">
+                    <h3>Celebration Space</h3>
+                    <p>Common area for celebrating festivals and special occasions</p>
                 </div>
             </div>
         </section>
@@ -278,6 +295,7 @@
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
                     <p>For bookings and inquiries, please reach out to us:</p>
+                    <br>
                     <ul>
                         <li>Phone: <a href="tel:+919335781223">9335781223</a></li>
                         <li>Email: <a href="mailto:maakalyanigirlshostel@gmail.com">maakalyanigirlshostel@gmail.com</a></li>
@@ -297,6 +315,11 @@
         <img class="lightbox-content" id="lightbox-img">
         <div class="lightbox-caption"></div>
     </div>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
